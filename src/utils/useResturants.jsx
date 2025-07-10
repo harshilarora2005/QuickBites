@@ -14,13 +14,7 @@ const useRestaurants = () => {
                 ? `${SWIGGY_API_URL}&nextOffset=${offset}`
                 : SWIGGY_API_URL;
 
-            const data = await fetch(url,
-                {
-                    headers: {
-                    Origin: "https://quickbitesnow.netlify.app/", 
-                    },
-                }
-            );
+            const data = await fetch(url);
             const json = await data.json();
             console.log(json);
             const newRestaurants = eval("json?." + SWIGGY_REST_API_PATH) || [];
