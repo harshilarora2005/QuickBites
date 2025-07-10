@@ -11,7 +11,7 @@ const useRestaurants = () => {
         try {
             setLoading(true);
             const url = offset
-                ? `${SWIGGY_API_URL}&offset=${offset}`
+                ? `${SWIGGY_API_URL}&nextOffset=${offset}`
                 : SWIGGY_API_URL;
 
             const data = await fetch(url,
